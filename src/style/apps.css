@@ -1,0 +1,85 @@
+.card-max-height {
+  max-height: calc(100vh - 13rem);
+  overflow: auto;
+}
+
+.logo-wrapper {
+  font-size: 1.9rem;
+}
+.logo-image {
+  display: inline-block;
+  height: 1.45rem;
+}
+
+.padding.small {
+  padding-left: 0.7rem;
+}
+
+.animate {
+  transition: all .15s ease-in-out;
+}
+
+.custom-content-box {
+  display: flex;
+  height: 15rem;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255,255,255,.75);
+  background-color: rgb(25,25,25);
+}
+
+body {
+  display: flex;
+  min-width: 420px;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+main {
+  height: calc(100vh - 9.27rem);
+  padding-top: 2rem;
+  overflow: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .lg-hide {
+    display: none;
+  }
+}
+.line-1{
+  position: relative;
+  width: 18em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 120%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);    
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms steps(44) infinite normal;
+}
+@-webkit-keyframes typewriter{
+  from{width: 0;}
+  to{width: 16.5em;}
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 16.5em;}
+}
+@-webkit-keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}

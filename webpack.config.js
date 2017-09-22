@@ -45,7 +45,7 @@ module.exports = function makeWebpackConfig() {
 
     // Output path from the view of the page
     // Uses webpack-dev-server in development
-    publicPath: isProd ? '/' : 'http://localhost:8080/',
+    publicPath: isProd ? '/' : 'http://localhost:5080/',
 
     // Filename for entry points
     // Only adds hash in build mode
@@ -109,6 +109,9 @@ module.exports = function makeWebpackConfig() {
           {loader: 'postcss-loader'}
         ],
       })
+    }, { // sass / scss loader for webpack
+      test: /\.(sass|scss)$/,
+      loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
     }, {
       // ASSET LOADER
       // Reference: https://github.com/webpack/file-loader

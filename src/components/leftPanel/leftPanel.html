@@ -1,0 +1,19 @@
+<div class="row">
+  <ul class="collection with-header">
+    <li class="collection-header">
+      <h4>Available items</h4>
+    </li>
+    <li
+      class="collection-item animate"
+      ng-repeat="item in data"
+      ng-class="{
+        'amber darken-1 white-text': leftpanel.isFibonacci($index + 1),
+        'red darken-1 white-text': $first,
+        'blue darken-1 white-text': leftpanel.isMiddle($index),
+        'green darken-1 white-text': $last,
+      }"
+      ng-show="item.display || !displayFilter"
+    >{{$index + 1}}. {{item.data}}
+    </li>
+  </ul>
+</div>  
