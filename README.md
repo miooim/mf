@@ -12,11 +12,8 @@ $ cd mf
 # install the dependencies with npm
 $ npm install
 
-# start the client server
+# start the client and backend server
 $ npm start
-
-# start the server
-$ npm start:api
 ```
 
 go to [http://localhost:5080](http://localhost:5080) in your browser.
@@ -30,6 +27,13 @@ go to [http://localhost:5080](http://localhost:5080) in your browser.
 
 # Getting Started
 
+This app uses following technologies:
+    * ES6 for client part
+    * AngularJS
+    * Materialize: http://materializecss.com/
+    * Express
+    * Webpack
+
 ## Dependencies
 
 What you need to run this app:
@@ -41,17 +45,28 @@ What you need to run this app:
 After you have installed all dependencies you can now run the app with:
 The app consists of two parts, server and client
 
-To run client part
+To run
 ```bash
 npm start
 ```
+It will start a local server using `webpack-dev-server` which will watch, build (in-memory), and reload for you. The port will be displayed to you as `http://localhost:5080`.
+It will run node server on `http://localhost:5090`
+It implements two API calls on one endpoint `http://localhost:5090/api/contents`
 
-To run server part
+To run only client part
+```bash
+npm server:client
+```
+To run only server part
 ```bash
 npm start:api
 ```
 
-It will start a local server using `webpack-dev-server` which will watch, build (in-memory), and reload for you. The port will be displayed to you as `http://localhost:5080`.
+GET and PUT
+Get will fetch everything present in the json file found in server/data
+Put will update this file with the new content
+
+PS: Prod build was not implemented.
 
 # Credits
 Built using a nice AngularJS boilerplate
