@@ -70,5 +70,5 @@ PS: Prod build was not implemented.
 
 # Credits
 Built using a nice AngularJS boilerplate
-```https://github.com/preboot/angularjs-webpack.git
-```
+https://github.com/preboot/angularjs-webpack.git
+
