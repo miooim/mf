@@ -28,11 +28,11 @@ go to [http://localhost:5080](http://localhost:5080) in your browser.
 # Getting Started
 
 This app uses following technologies:
-    * ES6 for client part
-    * AngularJS
-    * Materialize: http://materializecss.com/
-    * Express
-    * Webpack
+* ES6 for client part
+* AngularJS
+* Materialize: http://materializecss.com/
+* Express
+* Webpack
 
 ## Dependencies
 
