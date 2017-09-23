@@ -25,7 +25,6 @@ go to [http://localhost:5080](http://localhost:5080) in your browser.
 
 * [Getting Started](#getting-started)
     * [Dependencies](#dependencies)
-    * [Installing](#installing)
     * [Running the app](#running-the-app)
 * [Credits](#credits)
 
