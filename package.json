@@ -12,14 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/preboot/angularjs-webpack.git"
+    "url": "https://github.com/miooim/mf"
   },
-  "author": "Jesus Rodriguez",
+  "author": "Michael Lerman",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/preboot/angularjs-webpack/issues"
-  },
-  "homepage": "https://github.com/preboot/angularjs-webpack",
   "dependencies": {
     "angular": "^1.5.0",
     "body-parser": "^1.18.2",
