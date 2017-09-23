@@ -7,13 +7,13 @@
       class="collection-item animate"
       ng-repeat="item in data"
       ng-class="{
-        'amber darken-1 white-text': leftpanel.isFibonacci($index + 1),
-        'red darken-1 white-text': $first,
-        'blue darken-1 white-text': leftpanel.isMiddle($index),
-        'green darken-1 white-text': $last,
+        'amber lighten-4': leftpanel.isFibonacci($index + 1),
+        'red lighten-4': $first,
+        'light-blue lighten-4': leftpanel.isMiddle($index),
+        'light-green lighten-4': $last,
       }"
       ng-show="item.display || !displayFilter"
-    >{{$index + 1}}. {{item.data}}
+    >{{leftpanel.parseData(item)}}
     </li>
   </ul>
 </div>  

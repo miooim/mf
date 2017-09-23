@@ -4,7 +4,6 @@ import RightPanel from '../components/rightPanel/rightPanel';
 import '../style/materialize/js/materialize.min.js';
 import '../style/materialize/css/materialize.min.css';
 import '../style/apps.css';
-import '../style/app.scss';
 
 const appDirective = () => {
   return {

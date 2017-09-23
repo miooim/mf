@@ -1,21 +1,31 @@
 import angular from 'angular';
-
-import data from './data';
+import ContentService from '../../services/content.service';
 
 const leftPanelDirective = () => {
   return {
     template: require('./leftPanel.html'),
     controller: 'LeftPanelCtrl',
-    controllerAs: 'leftpanel'
+    controllerAs: 'leftpanel',
   }
 };
 
 class LeftPanelCtrl {
-  constructor($scope) {
+  constructor($scope, ContentService) {
     this.url = 'https://github.com/preboot/angular-webpack';
     this.$scope = $scope;
     this.$scope.displayFilter = false;
-    this.$scope.data = data.content;
+    this.ContentService = ContentService;
+    this.$scope.data = [];
+    this.initContent();
+  }
+
+  initContent() {
+    const { data } = this.$scope;
+    this.ContentService.getContent()
+      .then(result => {
+        this.$scope.data = result.data.content;
+      }
+    );
   }
 
   isPerfectSquare(num) {
@@ -35,11 +45,20 @@ class LeftPanelCtrl {
     }
     return false;
   }
+
+  parseData(content) {
+    if (!content.data) return "EMPTY";
+    if (content.type === 'list') {
+      return content.data.join(', ');
+    }
+    return content.data;
+  }
 }
 
 const MODULE_NAME = 'LeftPanel';
 
 angular.module(MODULE_NAME, [])
+  .service('ContentService', ContentService)
   .directive('leftpanel', leftPanelDirective)
   .controller('LeftPanelCtrl', LeftPanelCtrl);
 

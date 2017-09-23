@@ -1,4 +1,5 @@
 import angular from 'angular';
+import ContentService from '../../services/content.service';
 
 const rightPanelDirective = () => {
   return {
@@ -9,11 +10,12 @@ const rightPanelDirective = () => {
 };
 
 class RightPanelCtrl {
-  constructor($scope) {
+  constructor($scope, ContentService) {
     this.url = 'https://github.com/preboot/angular-webpack';
     this.$scope = $scope;
     this.$scope.displayFilter = false;
     this.text = '';
+    this.ContentService = ContentService;
   }
 
   handleCheckBox() {
@@ -27,12 +29,14 @@ class RightPanelCtrl {
       "type": "text",
       "display": this.$scope.displayFilter
     }];
+    this.ContentService.updateContent(this.$scope.data);
   }
 }
 
 const MODULE_NAME = 'rightPanel';
 
 angular.module(MODULE_NAME, [])
+  .service('ContentService', ContentService)
   .directive('rightpanel', rightPanelDirective)
   .controller('RightPanelCtrl', RightPanelCtrl);
 
